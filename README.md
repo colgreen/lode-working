@@ -20,7 +20,18 @@ prompts/SystemPrompt.txt
 
 Use it to start an AI assistant session for a non-coding project. Once active, the assistant should read the existing project context, preserve domain-native structure, and update durable lode files as work progresses.
 
-## Quick Start With Codex CLI
+## Quick Start
+
+Choose the wrapper for the assistant you want to use:
+
+```bash
+codex/lodew-codex      # Codex CLI
+claude/lodew-claude    # Claude Code
+```
+
+Each wrapper loads `prompts/SystemPrompt.txt` and passes any extra arguments through to the underlying tool. Run the wrapper from inside the project you want to work on.
+
+## Codex CLI
 
 The scripts in `codex/` start Codex CLI with the Lode Working system prompt as additional developer instructions:
 
@@ -30,15 +41,13 @@ codex/lodew-codex.ps1    # PowerShell
 codex/lodew-codex.bat    # Windows batch, delegates to PowerShell
 ```
 
-If you add `codex/` to your `PATH`, you can start a Lode Working session with:
+If you add `codex/` to your `PATH`, use:
 
 ```bash
 lodew-codex
 ```
 
-Arguments are passed through to `codex`, so you can use the wrapper from inside the project you want to work on.
-
-## Quick Start With Claude Code
+## Claude Code
 
 The scripts in `claude/` start Claude Code with the Lode Working system prompt:
 
@@ -48,13 +57,11 @@ claude/lodew-claude.ps1    # PowerShell
 claude/lodew-claude.bat    # Windows batch, delegates to PowerShell
 ```
 
-If you add `claude/` to your `PATH`, you can start a Lode Working session with:
+If you add `claude/` to your `PATH`, use:
 
 ```bash
 lodew-claude
 ```
-
-Arguments are passed through to `claude`, so you can use the wrapper from inside the project you want to work on.
 
 ## Typical Use
 
