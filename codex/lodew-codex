@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+script_dir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+repo_dir="$(cd -- "$script_dir/.." && pwd)"
+prompt_file="$repo_dir/prompts/SystemPrompt.txt"
+
+if ! command -v codex >/dev/null 2>&1; then
+  echo "Error: codex command not found on PATH." >&2
+  exit 127
+fi
+
+if [ ! -f "$prompt_file" ]; then
+  echo "Error: prompt file not found: $prompt_file" >&2
+  exit 1
+fi
+
+prompt="$(cat "$prompt_file")"
+config_value="developer_instructions='''$prompt'''"
+
+exec codex -c "$config_value" "$@"
+
