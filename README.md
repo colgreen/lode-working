@@ -2,6 +2,8 @@
 
 A disciplined approach to AI-assisted non-coding project work through iterative context management.
 
+Lode Working adopts and extends fjzeit's [Lode Coding](https://github.com/fjzeit/lode) method for non-coding projects.
+
 Lode Working helps you maintain durable markdown project memory as a byproduct of doing the work. A project lode captures the context, decisions, evidence, constraints, preferences, sources, lessons, plans, and handovers that make future AI sessions more effective.
 
 ## Context Management, Not Context Engineering
@@ -73,8 +75,4 @@ lodew-claude
 
 ## Acknowledgements
 
-Lode Working is inspired by fjzeit's Lode Coding method and repository:
-
-https://github.com/fjzeit/lode
-
-Lode Working adapts the lode concept for non-coding projects such as research, purchasing, writing, personal admin, planning, and other durable knowledge work.
+Lode Working is based on the lode concept from fjzeit's [Lode Coding](https://github.com/fjzeit/lode) method and repository.
