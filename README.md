@@ -2,77 +2,58 @@
 
 A disciplined approach to AI-assisted non-coding project work through iterative context management.
 
-Lode Working adopts and extends fjzeit's [Lode Coding](https://github.com/fjzeit/lode) method for non-coding projects.
-
-Lode Working helps you maintain durable markdown project memory as a byproduct of doing the work. A project lode captures the context, decisions, evidence, constraints, preferences, sources, lessons, plans, and handovers that make future AI sessions more effective.
+Lode Working helps you maintain durable markdown project memory as a byproduct of doing the work. Project memory captures the context, decisions, evidence, constraints, preferences, sources, lessons, plans, and handovers that make future AI sessions more effective.
 
 ## Context Management, Not Context Engineering
 
-Lode Working is conversational and iterative. Instead of trying to write all project context upfront, you work on real tasks and let the lode grow as useful knowledge is discovered.
+Lode Working is conversational and iterative. Instead of trying to write all project context upfront, you work on real tasks and let project memory grow as useful knowledge is discovered.
 
-The method is tool-agnostic. The lode is plain markdown, so it can be used by any AI assistant that can read and edit project files.
+The method is tool-agnostic. Project memory is plain markdown in the project repository, so it can be used by any AI assistant that can read and edit project files.
 
 ## This Repository
 
-The core of this repository is the system prompt:
+The core of this repository is the reusable Lode Working instruction file:
 
 ```text
-prompts/SystemPrompt.txt
+lode-working.md
 ```
 
-Use it to start an AI assistant session for a non-coding project. Once active, the assistant should read the existing project context, preserve domain-native structure, and update durable lode files as work progresses.
+Adapt or link this file from a project's `AGENTS.md` so AI assistants know how to work with that project's memory. The instructions are intended to live with the project, not be injected by a launcher script.
 
-## Quick Start
+## Recommended Project Shape
 
-Choose the wrapper for the assistant you want to use:
+Use the existing project structure first. For a new project, this is the default shape:
 
-```bash
-codex/lodew-codex      # Codex CLI
-claude/lodew-claude    # Claude Code
+```text
+project/
+├── README.md          # human-facing project orientation
+├── AGENTS.md          # AI-facing instructions; link or include Lode Working guidance
+├── memory/            # durable project context and state
+│   ├── summary.md
+│   ├── map.md
+│   ├── decisions.md
+│   ├── constraints.md
+│   ├── sources.md
+│   ├── lessons.md
+│   ├── plans/
+│   └── tmp/
+└── resources/         # source material, PDFs, exports, raw files, references
 ```
 
-Each wrapper loads `prompts/SystemPrompt.txt` and passes any extra arguments through to the underlying tool. Run the wrapper from inside the project you want to work on.
-
-## Codex CLI
-
-The scripts in `codex/` start Codex CLI with the Lode Working system prompt as additional developer instructions:
-
-```bash
-codex/lodew-codex        # Unix
-codex/lodew-codex.ps1    # PowerShell
-codex/lodew-codex.bat    # Windows batch, delegates to PowerShell
-```
-
-If you add `codex/` to your `PATH`, use:
-
-```bash
-lodew-codex
-```
-
-## Claude Code
-
-The scripts in `claude/` start Claude Code with the Lode Working system prompt:
-
-```bash
-claude/lodew-claude        # Unix
-claude/lodew-claude.ps1    # PowerShell
-claude/lodew-claude.bat    # Windows batch, delegates to PowerShell
-```
-
-If you add `claude/` to your `PATH`, use:
-
-```bash
-lodew-claude
-```
+Domain-native structures are preferred when they make retrieval and updates clearer. For example, a research project may use `research/`, a writing project may use `drafts/`, and an admin project may use folders named after cases or workflows. `memory/` remains the default place for durable project state.
 
 ## Typical Use
 
-1. Open the project you want to work on.
-2. Start an AI session with the Lode Working prompt.
-3. Work conversationally on a real task.
-4. Review and correct the assistant's understanding.
+1. Add or adapt `lode-working.md` in the project repository.
+2. Link it from `AGENTS.md`, or include the relevant instructions directly there.
+3. Create `memory/` when durable project memory is needed.
+4. Work conversationally on real tasks.
 5. Let durable knowledge accumulate in markdown files as a byproduct of the work.
 
 ## Acknowledgements
 
-Lode Working is based on the lode concept from fjzeit's [Lode Coding](https://github.com/fjzeit/lode) method and repository.
+Lode Working is inspired by fjzeit's Lode Coding method and repository:
+
+https://github.com/fjzeit/lode
+
+Lode Working adapts the Lode Coding idea for non-coding projects such as research, purchasing, writing, personal admin, planning, and other durable knowledge work.
