@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Colin
+Copyright (c) 2026 Colin Green
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,3 +20,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+Attribution note:
+
+Lode Working is inspired by fjzeit's Lode Coding method and repository:
+https://github.com/fjzeit/lode
+
+This license applies to the original Lode Working materials in this repository.
+It does not claim ownership of the Lode Coding project, method, or preexisting
+materials.
